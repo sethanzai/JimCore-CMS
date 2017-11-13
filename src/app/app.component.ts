@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { PersonalLineComponent } from './personal-line/personal-line.component'
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  title = 'Jimcore Contents Management System';
 }

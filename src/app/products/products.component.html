@@ -1,0 +1,39 @@
+<div class="example-header">
+    <mat-form-field>
+      <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+    </mat-form-field>
+  </div>
+  
+  <div class="example-container mat-elevation-z8">
+  
+    <mat-table [dataSource]="dataSource" matSort>
+  
+      <!-- ID Column -->
+      <ng-container matColumnDef="id">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> ID </mat-header-cell>
+        <mat-cell *matCellDef="let row"><button mat-raised-button color="primary" (click)="viewDetails(row.id)"> {{row.id}} </button></mat-cell>
+      </ng-container>
+  
+      <!-- Name Column -->
+      <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.name}} </mat-cell>
+      </ng-container>
+
+      <!-- isNew Column -->
+      <ng-container matColumnDef="isNew">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> New? </mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.isNew}} </mat-cell>
+      </ng-container>
+
+      <!-- Product Line Column -->
+      <ng-container matColumnDef="productLineId">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> Product Line </mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.productLineId}} </mat-cell>
+      </ng-container>
+  
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;">
+      </mat-row>
+    </mat-table>
+  </div>
